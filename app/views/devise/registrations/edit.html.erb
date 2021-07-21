@@ -3,6 +3,15 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+
+  <img src=<%= @user.image %> class = "icon_image">
+
+  <div class="field">
+  <%= f.label :プロフィール画像 %><br/>
+  <%= f.file_field :image %>
+  </div>
+
+
   <div class="field">
     <%= f.label :名前 %><br />
     <%= f.text_field :username, autofocus: true %>
@@ -46,8 +55,7 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<div class="delete-account">
+<p>アカウント削除<%= button_to "削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete %></p>
+<%= link_to "戻る", :back %>
+</div>

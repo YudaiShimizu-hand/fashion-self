@@ -1,8 +1,10 @@
-<h1>about me</h1>
+<h2>プロフィール<%= link_to "編集", edit_user_registration_path %></h2>
 
-<h3>ユーザー名</h3>
+
+<img src=<%= @user.image %> class = "icon_image">
+<h4 class="username mt-3">ユーザー名</h4>
 <%= @user.username %>
-<h3>メールアドレス</h3>
+<h4>メールアドレス</h4>
 <%= @user.email %>
-<h3>プロフィール</h3>
+<h4>プロフィール</h4>
 <%= @user.profile%>
