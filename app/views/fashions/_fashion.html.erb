@@ -1,0 +1,22 @@
+<div class="card.mb-5.post">
+ <div class="card-header">
+  <div class="d-flex.align-items-center">
+   <%=  current_user.username %>
+  </div>
+   <div class="ml-auto">
+   </div>
+  </div>
+ </div>
+
+<%= link_to fashion_path(fashion) do%>
+ <div class="swiper-container">
+  <div class="swiper-wrapper">
+   <% fashion.pic.each do |img| %>
+   <div class="swiper-slide">
+    <%= image_tag img.url, class: 'card-img-top'%>
+   <% end %>
+   </div>
+  </div>
+ </div>
+</div>
+<% end %>
