@@ -6,4 +6,10 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_many :fashions
+
+
+  def own?(object)
+    id == object.user_id
+  end
+  
 end

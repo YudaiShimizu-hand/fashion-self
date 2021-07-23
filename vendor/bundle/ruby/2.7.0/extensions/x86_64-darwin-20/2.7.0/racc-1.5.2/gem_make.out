@@ -1,0 +1,16 @@
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/yudai_shimizu/.rbenv/versions/2.7.0/bin/ruby -I /Users/yudai_shimizu/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20210723-90930-1280y94.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20210723-90930-1cd3wym/racc

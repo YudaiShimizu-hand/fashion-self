@@ -16,6 +16,19 @@ class FashionsController < ApplicationController
     @fashions = Fashion.all.includes(:user).order(created_at: :desc)
   end
 
+  def show
+    @fashion = Fashion.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def destroy
+    @fashion = current_user.fashions.find(params[:id])
+    @fashion.destroy!
+    redirect_to fashions_path
+  end
+
   private
 
     def fashion_params

@@ -1,0 +1,19 @@
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/Users/yudai_shimizu/.rbenv/versions/2.7.0/bin/ruby -I /Users/yudai_shimizu/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20210723-90930-1y4n15j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/yudai_shimizu/fashion-self/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20210723-90930-s68n2/byebug

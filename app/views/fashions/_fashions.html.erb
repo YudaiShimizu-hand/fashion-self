@@ -1,0 +1,44 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <% fashion.pic %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= fashion.title %></h5>
+        <p class="card-text"><%= fashion.body %></p>
+        <p class="card-text"><small class="text-muted"><%= fashion.shop %></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card.mb-5.fashion">
+ <div class="card-header">
+  <div class="d-flex.align-items-center">
+   <%= image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circl mr-1' %>
+   <%= current_user.username %>
+  </div>
+   <div class="ml-auto">
+   </div>
+  </div>
+ </div>
+
+<%= link_to fashion_path(fashion) do%>
+ <div class="swiper-container">
+  <div class="swiper-wrapper">
+   <% fashion.pic.each do |img| %>
+   <div class="swiper-slide">
+    <%= image_tag img.url, class: 'card-img-top'%>
+   <% end %>
+   </div>
+  </div>
+ </div>
+</div>
+<% end %>
+ <div class="card-body">
+  <div class="card-text">
+   <%= fashion.body %>
+  </div>
+ </div>

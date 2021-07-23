@@ -1,0 +1,29 @@
+<div class="card-grpup mb-3">
+   <div class="card-header">
+      <div class="d-flex.align-items-center">
+       <%= image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circl mr-1' %>
+       <%= current_user.username %>
+      </div>
+      <div class="ml-auto mt-2">
+       <%= link_to fashion_path(@fashion), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+        <%= icon 'far', 'trash-alt', class: 'fa-lg'%>
+       <% end %> 
+      </div>
+      <div class="swiper-container mt-2">
+       <div class="swiper-wrapper">
+        <% @fashion.pic.each do |img| %>
+        <div class="swiper-slide">
+         <%= image_tag img.url, class: 'card-img-top'%>
+        <% end %>
+       </div>
+    </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= @fashion.title %></h5>
+        <p class="card-content"><%= @fashion.body %></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= @fashion.shop %></small>
+    </div>
+  </div>
+</div>
