@@ -42,3 +42,50 @@
    <%= fashion.body %>
   </div>
  </div>
+
+
+<div class="card mb-3">
+   <div class="card-header">
+    <%= link_to users_show_path(@user) do %>
+      <div class="d-flex.align-items-center">
+       <%= image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circl mr-1' %>
+       <%= fashion.user.username %>
+      </div>
+      <% end %>
+      <div class="ml-auto mt-2">
+      <% if current_user&.own?(fashion) %>
+       <%= link_to fashion_path(fashion), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+        <%= icon 'far', 'trash-alt', class: 'fa-lg'%>
+       <% end %> 
+       <% end %>
+       </div>
+      <%= link_to fashion_path(fashion) do %>
+      <div class="swiper-container mt-2">
+       <div class="swiper-wrapper">
+        <% fashion.pic.each do |img| %>
+        <div class="swiper-slide">
+         <%= image_tag img.url, class: 'card-img-top'%>
+       </div>
+        <% end %>
+        <% end %>
+       <div class="swiper-pagination"></div>
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+   </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= fashion.title %></h5>
+    </div>
+   </div>
+</div>
+
+<div class= "row">
+ <div class= "col-md-5">
+  <h2>プロフィール<%= link_to "編集", edit_user_registration_path %></h2>
+  <img src=<%= @user.image %> class = "icon_image">
+  <h4 class="username mt-3">ユーザー名</h4>
+   <%= @user.username %>
+  <h4>メールアドレス</h4>
+   <%= @user.email %>
+  <h4>プロフィール</h4>
+   <%= @user.profile%>
+</div> 

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'pages/show'
   get 'users/show'
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }
-  get 'users/show' => "users#show"
+  devise_for :users, controllers: { registrations: 'users/registrations' } 
+  resources :users, :only => [:show]
  
   resources :fashions
 end
