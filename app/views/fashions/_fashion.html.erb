@@ -1,11 +1,15 @@
 <div class="card border-dark mb-3" style="max-width: 25rem;">
   <div class="card-header bg-transparent border-dark">
-   <%= link_to users_show_path(@user) do %>
+      <%= link_to user_path(fashion.user) do %>
       <div class="d-flex.align-items-center">
-       <%= image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circl mr-1' %>
+      <% if fashion.user.image.to_s == nil %>
+        <%= image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circl mr-1' %>
+      <% else %>
+       <%= image_tag fashion.user.image.to_s, size: '40x40', class: 'rounded-circl mr-1' %>
+      <% end %>
        <%= fashion.user.username %>
       </div>
-   <% end %>
+      <% end %>
    <div class="ml-auto mt-2">
    <% if current_user&.own?(fashion) %>
     <%= link_to fashion_path(fashion), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do %>

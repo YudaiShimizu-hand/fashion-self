@@ -1,4 +1,5 @@
 class FashionsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @fashion = Fashion.new
   end
