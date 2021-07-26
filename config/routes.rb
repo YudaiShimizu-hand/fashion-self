@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  root 'fashions#index'
   get 'pages/show'
   get 'users/show'
 
