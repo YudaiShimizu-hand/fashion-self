@@ -9,6 +9,35 @@
   <h4>プロフィール</h4>
    <%= @user.profile%>
  </div>
-</div>
 
+ <div class="col-md-5">
+ <%= paginate @fashion %>
+  <% @fashion.each do |fashion| %>
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><%= fashion.title %></div>
+  <div class="card-body">
+    <h5 class="card-title">
+     <div class="swiper-container">
+      <div class="swiper-wrapper">
+      <% fashion.pic.each do |img| %>
+       <div class="swiper-slide">
+        <%= image_tag img.url, class: 'card-img-top'%>
+       </div>
+       <% end %>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+     </div>
+   </h5>
+    <p class="card-text"><%= fashion.body %></p>
+    <div class="card-header bg-transparent border-white">
+    </div>
+    <p class="card-text">
+     購入ショップ：<%= fashion.shop %>
+    </p>
+  </div>
+  <% end %>
+ </div>
+</div>
  
