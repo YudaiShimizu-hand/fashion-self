@@ -1,0 +1,48 @@
+<% @users.each do |user| %>
+  <% @fashions = Fashion.where(user_id: user.id).limit(1).order("created_at DESC") %>
+  <% @fashions.each do |fashion| %>
+<%= link_to '全ての投稿', fashions_path %>
+<div class="card border-dark mb-3" style="max-width: 25rem;">
+  <div class="card-header bg-transparent border-dark">
+      <div class="d-flex.align-items-center">
+      <%= link_to user_path(fashion.user) do %>
+       <%= image_tag user.image.to_s, size: '40x40', class: 'rounded-circl mr-1' %>
+       <%= user.username %>
+       <% end %>
+      </div>
+   <div class="ml-auto mt-2">
+   <% if current_user&.own?(fashion) %>
+    <%= link_to fashion_path(fashion), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+    <%= icon 'far', 'trash-alt', class: 'fa-lg'%>
+    <% end %> 
+   <% end %>
+   </div>
+  </div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">
+     <div class="swiper-container">
+      <div class="swiper-wrapper">
+      <% fashion.pic.each do |img| %>
+       <div class="swiper-slide">
+        <%= image_tag img.url, class: 'card-img-top'%>
+       </div>
+       <% end %>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+     </div>
+    </h5>
+    <p class="card-text">
+    <%= link_to fashion_path(fashion) do %>
+    <p>検索キーワード:
+    <%= fashion.title %></p>
+    <% end %>
+    </p>
+    </div>
+   </div>
+  <% end %>
+ <% end %>
+ <%= paginate @users %>
+
+

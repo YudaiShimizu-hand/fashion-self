@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   PER = 2
+  PE = 4
   def show
     @user = User.find(params[:id])
     @users = current_user
@@ -18,6 +19,11 @@ def followers
     @user  = User.find(params[:id])
     @users = @user.followers
     render 'show_follower'
+end
+
+def following_fashions
+  @user = current_user
+  @users = @user.following.order(created_at: :desc).page(params[:page]).per(PE)
 end
 
 end

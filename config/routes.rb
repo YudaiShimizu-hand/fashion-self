@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' } 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :following_fashions
     end
   end
 
