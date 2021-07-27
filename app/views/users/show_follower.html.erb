@@ -1,0 +1,9 @@
+<h3>Follower一覧</h3>
+<% @user.followers.each do |user| %>
+ <table>
+<tr>
+  <td>  <%= user.username %> </td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+</table>
+<% end %>
