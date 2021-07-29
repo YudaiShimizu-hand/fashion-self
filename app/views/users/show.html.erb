@@ -16,13 +16,12 @@
   <div>
       <%= render "follow_form" %>
   </div>
-
-  <h4 class="username mt-3">ユーザー名</h4>
+  <h4 class="username text-info mt-3">ユーザー名</h4>
    <%= @user.username %>
-  <h4>メールアドレス</h4>
+  <h4 class="text-info mt-3">メールアドレス</h4>
    <%= @user.email %>
-  <h4>プロフィール</h4>
-   <%= @user.profile%>
+  <h4 class="text-info mt-3">自己紹介文</h4>
+   <%= @user.profile %>
 
  </div>
 
