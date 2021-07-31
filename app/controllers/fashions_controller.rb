@@ -7,11 +7,11 @@ class FashionsController < ApplicationController
 
   def create
     @fashion = current_user.fashions.build(fashion_params)
-   if @fashion.save
-    redirect_to fashions_path
-   else
-    render :new
-   end
+    if @fashion.save
+      redirect_to fashions_path
+    else
+      render :new
+    end
   end
 
   def index
@@ -25,8 +25,7 @@ class FashionsController < ApplicationController
     @fashion = Fashion.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @fashion = current_user.fashions.find(params[:id])
@@ -36,8 +35,8 @@ class FashionsController < ApplicationController
 
   private
 
-    def fashion_params
-        # images:[]とすることで、JSON形式でparamsを受け取る
-        params.require(:fashion).permit(:title, :body, :shop, {pic: []})
-    end
+  def fashion_params
+    # images:[]とすることで、JSON形式でparamsを受け取る
+    params.require(:fashion).permit(:title, :body, :shop, { pic: [] })
+  end
 end

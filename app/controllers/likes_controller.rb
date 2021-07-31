@@ -10,11 +10,10 @@ class LikesController < ApplicationController
     like.destroy
   end
 
-
   private
+
   def set_variables
     @fashion = Fashion.find(params[:fashion_id])
     @id_name = "#like-link-#{@fashion.id}"
   end
-
 end
