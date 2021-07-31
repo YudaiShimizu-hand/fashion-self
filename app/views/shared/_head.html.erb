@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+ <div class="container-fluid">
+  <a class="navbar-brand" href="#">FASHION</a>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+   <li class="nav-item">
+    <a class="nav-link active" aria-current="page"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link active" aria-current="page"><%= link_to 'プロフィール', users_show_path %></a>
+   </li>
+  </ul>
+ </div>
+</nav>

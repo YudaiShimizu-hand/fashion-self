@@ -1,0 +1,61 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+  <img src=<%= @user.image %> class = "icon_image">
+
+  <div class="field">
+  <%= f.label :プロフィール画像 %><br/>
+  <%= f.file_field :image %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :現在のパスワード %> <i>(必須)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :新しいパスワード %> <i>(任意)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード確認 %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :プロフィール %><br />
+    <%= f.text_area :profile, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<div class="delete-account">
+<p>アカウント削除<%= button_to "削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete %></p>
+<%= link_to "戻る", :back %>
+</div>
