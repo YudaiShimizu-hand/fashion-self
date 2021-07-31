@@ -1,5 +1,6 @@
 class FashionsController < ApplicationController
   before_action :authenticate_user!
+  PER = 4
   def new
     @fashion = Fashion.new
   end
@@ -14,7 +15,8 @@ class FashionsController < ApplicationController
   end
 
   def index
-    @fashions = Fashion.all.includes(:user).order(created_at: :desc)
+    @q = Fashion.ransack(params[:q]) # 検索オブジェクト作成
+    @fashions = @q.result.includes(:user).order(created_at: :desc).page(params[:page]).per(PER)
   end
 
   def show

@@ -1,7 +1,13 @@
 
 <div class="row">
  <div class="col-md-4.col-12 ">
+  <%= render 'search_form', url: fashions_path, q: @q %>
+  <% if @fashions.any? %>
   <%= render @fashions %>
+  <% else %>
+   <h3><%= '検索結果がありません。' %></h3>
+  <% end %>
+  <%= paginate @fashions %>
  </div>
  <div class="col-md-4.col-12 ">
   <div class="profile-box.md-3">
