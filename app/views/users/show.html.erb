@@ -1,13 +1,29 @@
 <div class= "row">
  <div class= "col-md-5">
-  <h2>プロフィール<%= link_to "編集", edit_user_registration_path %></h2>
+  <h2>プロフィール</h2>
   <img src=<%= @user.image %> class = "icon_image">
+
+  <div class="follower">
+    <%= link_to followers_user_path(@user.id) do %>
+          <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+    <% end %>
+  </div>
+  <div class="follow">
+    <%= link_to following_user_path(@user.id) do %>
+                <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+    <% end %>
+  </div>
+  <div>
+      <%= render "follow_form" %>
+  </div>
+
   <h4 class="username mt-3">ユーザー名</h4>
    <%= @user.username %>
   <h4>メールアドレス</h4>
    <%= @user.email %>
   <h4>プロフィール</h4>
    <%= @user.profile%>
+
  </div>
 
  <div class="col-md-5">
