@@ -1,0 +1,32 @@
+<div class="card border-dark mb-3" style="max-width: 30rem;">
+  <div class="card-header bg-transparent border-dark">
+      <div class="d-flex.align-items-center ml-3">
+       <h4><%= @fashion.title %></h4>
+      </div>
+  </div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">
+     <div class="swiper-container">
+      <div class="swiper-wrapper">
+      <% @fashion.pic.each do |img| %>
+       <div class="swiper-slide">
+        <%= image_tag img.url, class: 'card-img-top'%>
+       </div>
+       <% end %>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+     </div>
+    </h5>
+    <p class="card-text">
+      <%= @fashion.body %>
+    </p>
+    <div class="card-header bg-transparent border-success">
+    </div>
+    <p class="card-text">
+     購入ショップ：<%= @fashion.shop %>
+    </p>
+
+  </div>
+</div>

@@ -3,12 +3,13 @@
  <div class="container-fluid">
   <a class="navbar-brand" href="#">FASHION</a>
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-   <li class="nav-item">
-    <a class="nav-link active" aria-current="page"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link active" aria-current="page"><%= link_to 'プロフィール', users_show_path %></a>
-   </li>
+  <li class="navbar-item dropdown">
+   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">メニュー<span class="caret"></span></a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+    <li><a class="nav-link active" aria-current="page"><%= link_to  'ログアウト', destroy_user_session_path, method: :delete %></a></li>
+    <li><a class="nav-link active" aria-current="page"><%= link_to 'ファッション投稿', fashions_path %></a></li>
+  </ul>
+  </li>
   </ul>
  </div>
 </nav>

@@ -1,0 +1,23 @@
+<%= form_with model: fashion, local: true do |f| %>
+ <div calss="form-group">
+  <%= f.label :写真 %>
+  <%= f.file_field :pic, multiple: true, class: "form-controll" %>
+ </div>
+
+ <div calss="form-group">
+  <%= f.label :タイトル %>
+  <%= f.text_field :title, class: 'form-control' %>
+ </div>
+
+ <div calss="form-group">
+  <%= f.label :購入ショップ %>
+  <%= f.text_field :shop, class: 'form-control' %>
+ </div>
+
+ <div calss="form-group">
+  <%= f.label :ポイント %>
+  <%= f.text_area :body, class: 'form-control' %>
+ </div>
+ <%= f.submit :投稿, class: 'btn btn-primary btn-raised' %>
+
+<% end %>

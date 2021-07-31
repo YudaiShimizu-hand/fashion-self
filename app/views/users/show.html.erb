@@ -1,10 +1,11 @@
-<h2>プロフィール<%= link_to "編集", edit_user_registration_path %></h2>
-
-
-<img src=<%= @user.image %> class = "icon_image">
-<h4 class="username mt-3">ユーザー名</h4>
-<%= @user.username %>
-<h4>メールアドレス</h4>
-<%= @user.email %>
-<h4>プロフィール</h4>
-<%= @user.profile%>
+<div class= "row">
+ <div class= "col-md-5">
+  <h2>プロフィール<%= link_to "編集", edit_user_registration_path %></h2>
+  <img src=<%= @user.image %> class = "icon_image">
+  <h4 class="username mt-3">ユーザー名</h4>
+   <%= @user.username %>
+  <h4>メールアドレス</h4>
+   <%= @user.email %>
+  <h4>プロフィール</h4>
+   <%= @user.profile%>
+</div>
