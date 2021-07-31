@@ -1,16 +1,17 @@
-<nav class="navbar navbar-dark bg-dark">
-  <!-- Navbar content -->
- <div class="container-fluid">
-  <a class="navbar-brand" href="#">FASHION</a>
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="navbar-item dropdown">
-   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">メニュー<span class="caret"></span></a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
-    <li><a class="nav-link active" aria-current="page"><%= link_to  'ログアウト', destroy_user_session_path, method: :delete %></a></li>
-    <li><a class="nav-link active" aria-current="page"><%= link_to '投稿一覧', fashions_path %></a></li>
-     <li><a class="nav-link active" aria-current="page"><%= link_to  '新規投稿', new_fashion_path %></a></li>
-  </ul>
-  </li>
-  </ul>
- </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Make f3o</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-3">
+        <a class="nav-link active" href="/fashions"><i class="fas fa-book"></i></a>
+        <a class="nav-link active" href="/fashions/new"><i class="fas fa-plus"></i></a>
+        <a class="nav-link active" href="/topics/index"><i class="far fa-comment-alt"></i></a>
+        <a class="nav-link active" href="/users/edit"><i class="fas fa-user-edit"></i></a>
+        <a class="nav-link active" href="/users/sign_out" data-method="delete" ><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+    </div>
+  </div>
 </nav>

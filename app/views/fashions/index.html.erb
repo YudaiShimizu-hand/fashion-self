@@ -1,7 +1,9 @@
-
-<div class="row">
+<div class="container">
+<div class="row mt-5">
  <div class="col-md-4.col-12">
- <%= link_to 'followしてるユーザー', following_fashions_user_path(@fashions) %>
+ <%= link_to following_fashions_user_path(@fashions) do %>
+ <button type="button" class="btn btn-info mb-3">Follower</button>
+ <% end %>
  <%= render 'search_form', url: fashions_path, q: @q %>
   <% if @fashions.any? %>
   <%= render @fashions %>
@@ -10,10 +12,10 @@
   <% end %>
   <%= paginate @fashions %>
  </div>
- <div class="col-md-4.col-12">
-  <div class="ranks-box ml-5 mt-5">
+ <div class="col-md-4.col-12 mt-5">
+  <div class="ranks-box ml-5">
    <div class="card ml-5 mt-5">
-     人気の投稿
+     <h3>人気の投稿</h3>
    </div>
    <div class="card-body ml-5">
     <%= render 'rank', all_ranks: @all_ranks, a: @a %>
@@ -21,3 +23,5 @@
   </div>
  </div>
 </div>
+</div>
+

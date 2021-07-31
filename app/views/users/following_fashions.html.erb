@@ -1,4 +1,7 @@
-<%= link_to '全ての投稿', fashions_path %>
+<div class="container mt-5">
+<%= link_to fashions_path do %>
+ <button type="button" class="btn btn-info mb-3">全ての投稿</button>
+<% end %>
 <% @users.each do |user| %>
   <% @fashions.each do |fashion| %>
 <div class="card border-dark mb-3" style="max-width: 25rem;">
@@ -43,5 +46,6 @@
   <% end %>
  <% end %>
  <%= paginate @users %>
+ </div>
 
 
