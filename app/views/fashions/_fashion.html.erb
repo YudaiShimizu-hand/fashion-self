@@ -14,7 +14,9 @@
    <% if current_user&.own?(fashion) %>
     <%= link_to fashion_path(fashion), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do %>
     <%= icon 'far', 'trash-alt', class: 'fa-lg'%>
-    <% end %> 
+    <% end %>
+   <% else %>
+    <%= render 'likes/like', fashion: fashion %>
    <% end %>
    </div>
   </div>
