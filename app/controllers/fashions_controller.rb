@@ -17,6 +17,8 @@ class FashionsController < ApplicationController
   def index
     @q = Fashion.ransack(params[:q]) # 検索オブジェクト作成
     @fashions = @q.result.includes(:user).order(created_at: :desc).page(params[:page]).per(PER)
+    @all_ranks = Fashion.find(Like.group(:fashion_id).order('count(fashion_id) desc').limit(3).pluck(:fashion_id))
+    @a = 0
   end
 
   def show

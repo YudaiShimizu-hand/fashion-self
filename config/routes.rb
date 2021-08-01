@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
-  resources :fashions
+  resources :fashions 
   post   '/like/:fashion_id' => 'likes#like',   as: 'like'
   delete '/like/:fashion_id' => 'likes#unlike', as: 'unlike'
 end

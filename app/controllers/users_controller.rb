@@ -24,6 +24,7 @@ end
 def following_fashions
   @user = current_user
   @users = @user.following.order(created_at: :desc).page(params[:page]).per(PE)
+  @fashions = Fashion.where(user_id: @users.ids).order("created_at DESC")
 end
 
 end

@@ -1,7 +1,6 @@
-<% @users.each do |user| %>
-  <% @fashions = Fashion.where(user_id: user.id).limit(1).order("created_at DESC") %>
-  <% @fashions.each do |fashion| %>
 <%= link_to '全ての投稿', fashions_path %>
+<% @users.each do |user| %>
+  <% @fashions.each do |fashion| %>
 <div class="card border-dark mb-3" style="max-width: 25rem;">
   <div class="card-header bg-transparent border-dark">
       <div class="d-flex.align-items-center">
