@@ -1,0 +1,22 @@
+<div class="row">
+<div class="col-md-7">
+<h1 class="sl mb-2">スレッド一覧</h1>
+<p class="sl mb-5">* 使わなくなったスレは削除してください。</p>
+<ul>
+  <% @topics.each do |topic| %>
+    <li>
+     <%= link_to topic.title, topics_show_path(topic.id) %>
+     <%= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+    </li>
+  <% end %>
+</ul>
+</div>
+
+<div class="col-md-5">
+<h1 class="sl mb-5">スレッド作成</h1>
+<%= form_for @newTopic, :url => {:action => 'create'} do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "作成" %>
+<% end %>
+</div>
+</div>

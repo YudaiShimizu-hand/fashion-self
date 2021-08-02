@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships
   has_many :likes, dependent: :destroy 
   has_many :like_fashions, through: :likes, source: :fashion
+
   
   def own?(object)
     id == object.user_id
