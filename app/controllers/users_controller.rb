@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   PER = 2
   PE = 4
+
+  
   def show
     @user = User.find(params[:id])
     @users = current_user
     @fashion = @user.fashions.all.order(created_at: :desc).page(params[:page]).per(PER)
   end
+
 
   def following
     #@userがフォローしているユーザー
@@ -26,5 +29,6 @@ def following_fashions
   @users = @user.following.order(created_at: :desc).page(params[:page]).per(PE)
   @fashions = Fashion.where(user_id: @users.ids).order("created_at DESC")
 end
+
 
 end

@@ -1,7 +1,9 @@
-<div class="card border-dark mb-3" style="max-width: 30rem;">
+<div class="container">
+<div class="card border-dark mb-3 mt-5" style="max-width: 30rem;">
   <div class="card-header bg-transparent border-dark">
       <div class="d-flex.align-items-center ml-3">
-       <h4><%= @fashion.title %></h4>
+       <h4><%= @fashion.title %></h4></br>
+       <%= render 'likes/like', fashion: @fashion %>
       </div>
   </div>
   <div class="card-body text-dark">
@@ -29,4 +31,5 @@
     </p>
 
   </div>
+</div>
 </div>

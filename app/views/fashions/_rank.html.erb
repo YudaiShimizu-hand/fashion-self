@@ -1,4 +1,5 @@
 <% all_ranks.each do |rank| %>
-    <h3 class="rank mb-3"><%= a+= 1 %>位</h3><%= rank.user.username %></br></br>
+    <h3 class="rank mt-3 mb-3 text-danger"><%= a+= 1 %>位</h3>
+    <p class="rank-name mb-3"><%= rank.user.username %></p>
     <p>「<%= rank.title %>」</p>
 <% end %>

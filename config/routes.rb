@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'fashions#index'
+  root 'pages#index'
 
   post 'posts/create' => 'posts#create', as: :post_create
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post 'topics/create' => 'topics#create'
   delete 'topics/delete/:id' => 'topics#delete', as: :topic_delete
 
-  get 'pages/show'
+  
   get 'users/show'
 
   devise_for :users, controllers: { registrations: 'users/registrations' } 

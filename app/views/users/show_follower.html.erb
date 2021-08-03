@@ -1,9 +1,10 @@
-<h3>Follower一覧</h3>
+<div class="container">
+<h1 class="follower mb-5 mt-5">Follower一覧</h1>
 <% @user.followers.each do |user| %>
- <table>
-<tr>
-  <td>  <%= user.username %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
-</table>
+ 
+ <%= link_to user_path(user) do %>
+  <h2><%= image_tag user.image.to_s, size: '40x40', class: 'rounded-circl mr-1' %><%= user.username %></h2> 
 <% end %>
+
+<% end %>
+</div>

@@ -1,9 +1,9 @@
-<div class= "row">
+<div class="container">
+<div class= "row mt-5">
  <div class= "col-md-5">
-  <h2>プロフィール</h2>
-  <img src=<%= @user.image %> class = "icon_image">
-
-  <div class="follower">
+  <h2 class="prof-title mb-3">プロフィール</h2>
+  <%= image_tag @user.image.to_s, size: '100x100', class: 'rounded-circl mr-1' %>
+  <div class="follower mt-3">
     <%= link_to followers_user_path(@user.id) do %>
           <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
     <% end %>
@@ -16,20 +16,19 @@
   <div>
       <%= render "follow_form" %>
   </div>
-  <h4 class="username text-info mt-3">ユーザー名</h4>
+  <h4 class="text-danger mt-3">ユーザー名</h4>
    <%= @user.username %>
-  <h4 class="text-info mt-3">メールアドレス</h4>
+  <h4 class="text-danger mt-3">メールアドレス</h4>
    <%= @user.email %>
-  <h4 class="text-info mt-3">自己紹介文</h4>
+  <h4 class="text-danger mt-3">自己紹介文</h4>
    <%= @user.profile %>
 
  </div>
 
- <div class="col-md-5">
- <%= paginate @fashion %>
+ <div class="col-md-5 mt-5">
+  <%= paginate @fashion %>
   <% @fashion.each do |fashion| %>
   <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header"><%= fashion.title %></div>
   <div class="card-body">
     <h5 class="card-title">
      <div class="swiper-container">
@@ -45,14 +44,14 @@
       <div class="swiper-button-next"></div>
      </div>
    </h5>
-    <p class="card-text"><%= fashion.body %></p>
-    <div class="card-header bg-transparent border-white">
-    </div>
     <p class="card-text">
-     購入ショップ：<%= fashion.shop %>
+    <%= link_to fashion_path(fashion) do %>
+    検索キーワード：<%= fashion.title %>
+    <% end %>
     </p>
   </div>
   <% end %>
  </div>
+</div>
 </div>
  
