@@ -25,8 +25,6 @@ class FashionsController < ApplicationController
     @fashion = Fashion.find(params[:id])
   end
 
-  def edit
-  end
 
   def destroy
     @fashion = current_user.fashions.find(params[:id])

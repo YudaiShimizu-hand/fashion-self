@@ -5,15 +5,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :image, ImageUploader
 
-  has_many :fashions
+  attr_accessor :current_password
 
-  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
+  has_many :fashions, dependent: :destroy
+
+  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   has_many :following, through: :following_relationships
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
   has_many :likes, dependent: :destroy 
   has_many :like_fashions, through: :likes, source: :fashion
 
+  validates :username ,presence: true
+  validates :profile, length: {maximum: 50}
   
   def own?(object)
     id == object.user_id
