@@ -1,24 +1,56 @@
-# README
+# MakeF3o アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://fashion-self-web.herokuapp.com/
 
-Things you may want to cover:
+## 概要
 
-* Ruby version
+```
+ファッションを楽しく、身近に、独創的にをコンセプトに作りました。
+```
+私自身、ファッションに詳しくなく勉強しようと思ってもモデルの人がきている服はどうにもきれないなと思うことがありました。
+そこで一般の人が気軽に投稿出来るアプリがあれば、その悩みは改善され、新しくファッションに興味を持つ人も増えるのではないでしょうか？
 
-* System dependencies
+## アプリ構造
 
-* Configuration
+- フロントエンド
+  - HTML/CSS
+  - javascript
 
-* Database creation
+- バックエンド
+  - ruby on rails
+  - Ruby
 
-* Database initialization
+- テスト
+  - RSpec
 
-* How to run the test suite
+- データベース
+  - PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+- コンテナ
+  - Docker
+  - docker-compose
 
-* Deployment instructions
+- 開発環境
+  - MacOS
+  - VScode
+  - Git
+  - Github
 
-* ...
+- デプロイ
+  - heroku
+
+## 機能
+
+- ログイン機能、新規登録機能(devise)
+- 画像アップロード(carrierwave, mini_magick)
+- 画像スライド(swiper)
+- デザイン (Bootstrap,fontowsome)
+- いいね機能,フォロー機能(ajax)
+- ページネーション(kaminari)
+- 掲示板
+- 投稿機能
+
+
+
+
+
