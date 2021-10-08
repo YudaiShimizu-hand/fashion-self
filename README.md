@@ -51,6 +51,16 @@ https://fashion-self-web.herokuapp.com/
 - 投稿機能
 
 
+[![Image from Gyazo](https://i.gyazo.com/704047182444925502342741571979b8.png)](https://gyazo.com/704047182444925502342741571979b8)
 
+[![Image from Gyazo](https://i.gyazo.com/225c4a8c80e1acac2d21aff89249a661.png)](https://gyazo.com/225c4a8c80e1acac2d21aff89249a661)
+
+[![Image from Gyazo](https://i.gyazo.com/4b64bfee81915ef66cdc6907ae1097a1.jpg)](https://gyazo.com/4b64bfee81915ef66cdc6907ae1097a1)
+
+[![Image from Gyazo](https://i.gyazo.com/a7aafd55386e033b6b37e5d6a5e1d899.png)](https://gyazo.com/a7aafd55386e033b6b37e5d6a5e1d899)
+
+[![Image from Gyazo](https://i.gyazo.com/ffc068147f51c9d045dc630e429580e3.png)](https://gyazo.com/ffc068147f51c9d045dc630e429580e3)
+
+[![Image from Gyazo](https://i.gyazo.com/9f2cee2cf0871ed3f3ecb428394de48d.png)](https://gyazo.com/9f2cee2cf0871ed3f3ecb428394de48d)
 
 
